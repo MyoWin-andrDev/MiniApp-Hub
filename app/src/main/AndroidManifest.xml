@@ -36,6 +36,11 @@
             android:name=".calendar.MainActivity_Calendar"
             android:exported="true">
         </activity>
+<!--        Date Counter-->
+        <activity
+            android:name=".dateCounter.DateCounter"
+            android:exported="true">
+        </activity>
         <activity
             android:name=".MainActivity"
             android:exported="true">
