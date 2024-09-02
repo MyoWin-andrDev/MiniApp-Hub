@@ -12,10 +12,24 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyAppList"
         tools:targetApi="31">
+<!--        Word Guess-->
         <activity
             android:name=".wordGuess.MainActivityWordGuess"
+            android:exported="false">
+        </activity>
+<!--        Font Converter-->
+        <activity android:name=".fontConverter.MainActivityFontConverter"
             android:exported="true">
-
+        </activity>
+<!--        Blue Calculator-->
+        <activity
+            android:name=".calculator.MainActivity_Blue_Calculator"
+            android:exported="false">
+        </activity>
+<!--        Red Calculator-->
+        <activity
+            android:name=".calculator.MainActivity_Red_Calculator"
+            android:exported="false">
         </activity>
         <activity
             android:name=".MainActivity"

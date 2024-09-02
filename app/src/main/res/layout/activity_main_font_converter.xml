@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="8dp"
+    android:paddingStart="8dp"
+    android:paddingEnd="8dp"
+    tools:context=".MainActivity">
+
+
+    <RadioGroup
+        android:id="@+id/rg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:orientation="horizontal">
+
+
+         <RadioButton
+             android:id="@+id/rb_uniToZaw"
+             android:layout_width="0dp"
+             android:layout_height="wrap_content"
+             android:layout_weight="1"
+             android:fontFamily="@font/play_write_hr"
+             android:text="Unicode To Zawgyi"
+             android:textSize="15dp" />
+
+        <RadioButton
+            android:id="@+id/rb_zawToUni"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:checked="true"
+            android:fontFamily="@font/play_write_hr"
+            android:text="Zawgyi To Unicode"
+            android:textSize="15dp" />
+
+    </RadioGroup>
+
+    <EditText
+        android:id="@+id/input"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/pyidaungsu_1_8_3_regular"
+        android:gravity="top|start"
+        android:hint = "Input Text Here"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/btn_convert"
+            android:backgroundTint="@color/material_dynamic_tertiary20"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="40dp"
+            android:layout_weight="1"
+            android:text="Convert"/>
+
+         <Button
+             android:id="@+id/btn_copy"
+             android:backgroundTint="@color/material_dynamic_tertiary20"
+             android:layout_width="0dp"
+             android:layout_height="wrap_content"
+             android:layout_marginStart="8dp"
+             android:layout_marginEnd="8dp"
+             android:layout_marginRight="40dp"
+             android:layout_weight="1"
+             android:text="Copy"/>
+
+        <Button
+            android:id="@+id/btn_clear"
+            android:backgroundTint="@color/material_dynamic_tertiary20"
+            android:textColor="@color/white1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="40dp"
+            android:layout_weight="1"
+            android:text="Clear"/>
+
+    </LinearLayout>
+
+        <EditText
+            android:id="@+id/output"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:layout_marginTop="10dp"
+            android:layout_weight="1"
+            android:editable="false"
+            android:fontFamily="@font/zawgyi_one"
+            android:gravity="top|start"
+            android:hint = "Output"/>
+
+
+
+
+
+</LinearLayout>

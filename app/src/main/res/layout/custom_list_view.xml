@@ -9,6 +9,7 @@
         android:id="@+id/imgView"
         android:layout_width="60dp"
         android:layout_height="60dp"
+        android:background="@drawable/bg_icon"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:src="@drawable/word_guess"

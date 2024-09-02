@@ -7,11 +7,14 @@ import android.widget.AdapterView;
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import java.util.List;
-import it.ezzie.myapplist.databinding.ActivityMainBinding;
+
+import it.ezzie.myapplist.calculator.MainActivity_Blue_Calculator;
+import it.ezzie.myapplist.databinding.ActivityMiniAppHubBinding;
+import it.ezzie.myapplist.fontConverter.MainActivityFontConverter;
 import it.ezzie.myapplist.wordGuess.MainActivityWordGuess;
 
 public class MainActivity extends AppCompatActivity {
-    private ActivityMainBinding binding;
+    private ActivityMiniAppHubBinding binding;
     private List<AppList> appList;
     private CustomListView listAdapter;
     private Intent intent;
@@ -20,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        binding = ActivityMainBinding.inflate(getLayoutInflater());
+        binding = ActivityMiniAppHubBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         initAppData();
         initList();
@@ -34,7 +37,9 @@ public class MainActivity extends AppCompatActivity {
 
     private void initAppData(){
         appList = List.of(
-                new AppList(1,"Word Guess","Puzzle", R.drawable.word_guess)
+                new AppList(1,"Word Guess","Puzzle", R.drawable.word_guess),
+                new AppList(2,"Font Converter","Font", R.drawable.font_converter),
+                new AppList(3,"Calculator","Math", R.drawable.calculator)
         );
     }
 
@@ -51,9 +56,17 @@ public class MainActivity extends AppCompatActivity {
     private void initAppSwitch(String appTitle){
         switch (appTitle){
           case  "Word Guess" :
-              intent = new Intent(this, MainActivityWordGuess.class);
-              initAppIntent(intent);
-              break;
+                intent = new Intent(this, MainActivityWordGuess.class);
+                initAppIntent(intent);
+                break;
+          case "Font Converter" :
+                intent = new Intent(MainActivity.this, MainActivityFontConverter.class);
+                initAppIntent(intent);
+                break;
+          case "Calculator" :
+                intent = new Intent(MainActivity.this, MainActivity_Blue_Calculator.class);
+                initAppIntent(intent);
+                break;
         }
     }
     private void initAppIntent(Intent intent){

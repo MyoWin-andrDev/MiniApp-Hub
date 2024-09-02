@@ -17,6 +17,8 @@ import androidx.activity.EdgeToEdge;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
+import it.ezzie.myapplist.R;
+
 public class MainActivityFontConverter extends AppCompatActivity {
 
     private RadioGroup radioGroup;
@@ -30,7 +32,7 @@ public class MainActivityFontConverter extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_main_font_converter);
         zawFont = getResources().getFont(R.font.zawgyi_one);
         uniFont = getResources().getFont(R.font.pyidaungsu_1_8_3_regular);
         initUI();
