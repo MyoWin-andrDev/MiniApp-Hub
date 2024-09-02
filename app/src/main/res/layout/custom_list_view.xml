@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="20dp">
+
+    <ImageView
+        android:id="@+id/imgView"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:src="@drawable/word_guess"
+        android:layout_marginStart="20dp"/>
+
+    <TextView
+        android:id="@+id/txtTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/imgView"
+        app:layout_constraintTop_toTopOf="parent"
+        android:text="Native Kotlin Development"
+        android:textSize="20dp"
+        android:fontFamily="@font/lato_bold"
+        android:layout_marginStart="40dp"/>
+
+    <TextView
+        android:id="@+id/txtType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/lato_regular"
+        android:text="Education"
+        android:textSize="18dp"
+        app:layout_constraintBottom_toBottomOf="@+id/imgView"
+        app:layout_constraintStart_toEndOf="@id/imgView"
+        app:layout_constraintTop_toBottomOf="@id/txtTitle"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="40dp"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
