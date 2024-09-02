@@ -1,24 +1,20 @@
 package it.ezzie.myapplist;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.Toast;
-
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
-
 import java.util.List;
-
 import it.ezzie.myapplist.databinding.ActivityMainBinding;
+import it.ezzie.myapplist.wordGuess.MainActivityWordGuess;
 
 public class MainActivity extends AppCompatActivity {
     private ActivityMainBinding binding;
     private List<AppList> appList;
     private CustomListView listAdapter;
+    private Intent intent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,8 +44,19 @@ public class MainActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 AppList selectedApp = appList.get(position);
                 String appTitle = selectedApp.appTitle();
-                Toast.makeText(MainActivity.this, appTitle, Toast.LENGTH_SHORT).show();
+                initAppSwitch(appTitle);
             }
         });
+    }
+    private void initAppSwitch(String appTitle){
+        switch (appTitle){
+          case  "Word Guess" :
+              intent = new Intent(this, MainActivityWordGuess.class);
+              initAppIntent(intent);
+              break;
+        }
+    }
+    private void initAppIntent(Intent intent){
+        startActivity(intent);
     }
 }

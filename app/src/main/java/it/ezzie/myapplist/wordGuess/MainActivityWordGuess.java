@@ -14,7 +14,9 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Random;
 
-public class MainActivity extends AppCompatActivity {
+import it.ezzie.myapplist.R;
+
+public class MainActivityWordGuess extends AppCompatActivity {
 
      String[] guess  = {
             "Apple",
@@ -45,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_main_word_guess);
          txt = findViewById(R.id.txt);
         EditText edt = findViewById(R.id.edt);
         Button btn = findViewById(R.id.btn);
