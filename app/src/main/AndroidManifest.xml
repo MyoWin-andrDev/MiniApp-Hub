@@ -41,6 +41,16 @@
             android:name=".dateCounter.DateCounter"
             android:exported="true">
         </activity>
+<!--        Intent-->
+        <activity
+            android:name=".intent.ActivityLifeCycle"
+            android:exported="true">
+        </activity>
+
+        <activity
+            android:name=".intent.InputActivity"
+            android:exported="false">
+        </activity>
         <activity
             android:name=".MainActivity"
             android:exported="true">
