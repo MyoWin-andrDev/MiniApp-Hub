@@ -46,8 +46,9 @@ public class MainActivity extends AppCompatActivity {
         binding.listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                String item = String.valueOf(parent.getItemIdAtPosition(position));
-                Toast.makeText(MainActivity.this, item, Toast.LENGTH_LONG).show();
+                AppList selectedApp = appList.get(position);
+                String appTitle = selectedApp.appTitle();
+                Toast.makeText(MainActivity.this, appTitle, Toast.LENGTH_SHORT).show();
             }
         });
     }
