@@ -15,6 +15,8 @@ import it.ezzie.myapplist.dateCounter.DateCounter;
 import it.ezzie.myapplist.fontConverter.MainActivityFontConverter;
 import it.ezzie.myapplist.intent.ActivityLifeCycle;
 import it.ezzie.myapplist.musicplayer.MainActivityMusic;
+import it.ezzie.myapplist.todolist.MainActivityTodo;
+import it.ezzie.myapplist.voucher.MainActivityVoucher;
 import it.ezzie.myapplist.wordGuess.MainActivityWordGuess;
 
 public class MainActivity extends AppCompatActivity {
@@ -47,7 +49,9 @@ public class MainActivity extends AppCompatActivity {
                 new AppList(4,"Calendar","Events", R.drawable.calendar),
                 new AppList(5,"Date Counter","Events", R.drawable.date_counter),
                 new AppList(6,"Intent","Implicit and Explicit", R.drawable.intent),
-                new AppList(7,"Music Player","Entertainment", R.drawable.musicplayer)
+                new AppList(7,"Music Player","Entertainment", R.drawable.musicplayer),
+                new AppList(8,"Voucher App","Finance", R.drawable.voucherapp),
+                new AppList(9,"Todo List","Management", R.drawable.todolist)
         );
     }
 
@@ -81,8 +85,14 @@ public class MainActivity extends AppCompatActivity {
           case "Intent" :
                 intent = new Intent(MainActivity.this, ActivityLifeCycle.class);
                 break;
-            case "Music Player" :
+          case "Music Player" :
                 intent = new Intent(MainActivity.this, MainActivityMusic.class);
+                break;
+          case "Voucher App" :
+                intent = new Intent(MainActivity.this, MainActivityVoucher.class);
+                break;
+            case "Todo List" :
+                intent = new Intent(MainActivity.this, MainActivityTodo.class);
                 break;
         }
         initAppIntent(intent);
