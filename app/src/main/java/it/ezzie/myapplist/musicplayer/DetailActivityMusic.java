@@ -3,34 +3,30 @@ package it.ezzie.myapplist.musicplayer;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.util.Log;
 import android.widget.Toast;
-
 import androidx.activity.EdgeToEdge;
 import androidx.annotation.OptIn;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.content.res.AppCompatResources;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 import androidx.media3.common.MediaItem;
 import androidx.media3.common.util.UnstableApi;
 import androidx.media3.datasource.RawResourceDataSource;
 import androidx.media3.exoplayer.ExoPlayer;
 
-import com.example.musicplayer.databinding.ActivityDetailBinding;
-import java.io.Serializable;
 
-public class DetailActivity extends AppCompatActivity {
+import it.ezzie.myapplist.R;
+import it.ezzie.myapplist.databinding.ActivityDetailMusicBinding;
 
-    private ActivityDetailBinding binding;
+public class DetailActivityMusic extends AppCompatActivity {
+
+    private ActivityDetailMusicBinding binding;
     private Song song;
     private ExoPlayer exoPlayer;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        binding = ActivityDetailBinding.inflate(getLayoutInflater());
+        binding = ActivityDetailMusicBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         initUI();
         initListener();
@@ -39,14 +35,14 @@ public class DetailActivity extends AppCompatActivity {
 
     private void initListener() {
         binding.btnNext.setOnClickListener(v -> {
-            int index = MainActivity.songs.indexOf(song);
-            if(index == MainActivity.songs.size() -1){
+            int index = MainActivityMusic.songs.indexOf(song);
+            if(index == MainActivityMusic.songs.size() -1){
                 index = 0;
             }
             else{
                 index ++;
             }
-            song = MainActivity.songs.get(index);
+            song = MainActivityMusic.songs.get(index);
             updateSongData(song);
             updateSongPlayer();
         });
@@ -61,14 +57,14 @@ public class DetailActivity extends AppCompatActivity {
             }
         });
         binding.btnPrevious.setOnClickListener(v -> {
-            int index = MainActivity.songs.indexOf(song);
+            int index = MainActivityMusic.songs.indexOf(song);
             if(index == 0){
-                index = MainActivity.songs.size() -1;
+                index = MainActivityMusic.songs.size() -1;
             }
             else{
                 index --;
             }
-            song = MainActivity.songs.get(index);
+            song = MainActivityMusic.songs.get(index);
             updateSongData(song);
             updateSongPlayer();
         });

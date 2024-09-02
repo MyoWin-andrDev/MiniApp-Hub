@@ -51,6 +51,11 @@
             android:name=".intent.InputActivity"
             android:exported="false">
         </activity>
+<!--        Music Player-->
+        <activity
+            android:name=".musicplayer.MainActivityMusic"
+            android:exported="true">
+        </activity>
         <activity
             android:name=".MainActivity"
             android:exported="true">

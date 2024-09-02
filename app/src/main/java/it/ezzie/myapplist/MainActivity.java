@@ -14,6 +14,7 @@ import it.ezzie.myapplist.databinding.ActivityMiniAppHubBinding;
 import it.ezzie.myapplist.dateCounter.DateCounter;
 import it.ezzie.myapplist.fontConverter.MainActivityFontConverter;
 import it.ezzie.myapplist.intent.ActivityLifeCycle;
+import it.ezzie.myapplist.musicplayer.MainActivityMusic;
 import it.ezzie.myapplist.wordGuess.MainActivityWordGuess;
 
 public class MainActivity extends AppCompatActivity {
@@ -45,7 +46,8 @@ public class MainActivity extends AppCompatActivity {
                 new AppList(3,"Calculator","Maths", R.drawable.calculator),
                 new AppList(4,"Calendar","Events", R.drawable.calendar),
                 new AppList(5,"Date Counter","Events", R.drawable.date_counter),
-                new AppList(6,"Intent","Implicit and Explicit", R.drawable.intent)
+                new AppList(6,"Intent","Implicit and Explicit", R.drawable.intent),
+                new AppList(7,"Music Player","Entertainment", R.drawable.musicplayer)
         );
     }
 
@@ -63,29 +65,27 @@ public class MainActivity extends AppCompatActivity {
         switch (appTitle){
           case  "Word Guess" :
                 intent = new Intent(this, MainActivityWordGuess.class);
-                initAppIntent(intent);
                 break;
           case "Font Converter" :
                 intent = new Intent(MainActivity.this, MainActivityFontConverter.class);
-                initAppIntent(intent);
                 break;
           case "Calculator" :
                 intent = new Intent(MainActivity.this, MainActivity_Blue_Calculator.class);
-                initAppIntent(intent);
                 break;
           case "Calendar" :
                 intent = new Intent(MainActivity.this, MainActivity_Calendar.class);
-                initAppIntent(intent);
                 break;
           case "Date Counter" :
                 intent = new Intent(MainActivity.this, DateCounter.class);
-                initAppIntent(intent);
                 break;
-            case "Intent" :
+          case "Intent" :
                 intent = new Intent(MainActivity.this, ActivityLifeCycle.class);
-                initAppIntent(intent);
+                break;
+            case "Music Player" :
+                intent = new Intent(MainActivity.this, MainActivityMusic.class);
                 break;
         }
+        initAppIntent(intent);
     }
     private void initAppIntent(Intent intent){
         startActivity(intent);

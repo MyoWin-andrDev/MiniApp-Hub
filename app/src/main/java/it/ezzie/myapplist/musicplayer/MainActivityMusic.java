@@ -2,30 +2,30 @@ package it.ezzie.myapplist.musicplayer;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
-import com.example.musicplayer.databinding.ActivityMainBinding;
 
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity {
+import it.ezzie.myapplist.R;
+import it.ezzie.myapplist.databinding.ActivityMainMusicBinding;
 
-    private ActivityMainBinding binding;
+public class MainActivityMusic extends AppCompatActivity {
+
+    private ActivityMainMusicBinding binding;
     public static List<Song> songs;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        binding = ActivityMainBinding.inflate(getLayoutInflater());
+        binding = ActivityMainMusicBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         initData();
     }
@@ -51,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
         String songName = text.getText().toString();
         Song currentSong = songs.stream().filter(song -> song.name().equalsIgnoreCase(songName)).findFirst().get();
         Toast.makeText(this, currentSong.name(), Toast.LENGTH_SHORT).show();
-        Intent intent = new Intent(this, DetailActivity.class);
+        Intent intent = new Intent(this, DetailActivityMusic.class);
 //        intent.putExtra("name",currentSong.name());
 //        intent.putExtra("image",currentSong.image());
         intent.putExtra("song",currentSong);
