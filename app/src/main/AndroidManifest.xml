@@ -31,6 +31,11 @@
             android:name=".calculator.MainActivity_Red_Calculator"
             android:exported="false">
         </activity>
+<!--        Calendar-->
+        <activity
+            android:name=".calendar.MainActivity_Calendar"
+            android:exported="true">
+        </activity>
         <activity
             android:name=".MainActivity"
             android:exported="true">

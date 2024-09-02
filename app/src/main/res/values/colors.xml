@@ -13,5 +13,10 @@
     <color name="accentColor">#FF8A65</color>
     <color name="lightGrey">#F5F5F5</color>
     <color name="darkGrey">#BDBDBD</color>
+    <color name="black2">#1D1E27</color>
+    <color name="white2">#F7EFE7</color>
+    <color name="copper">#EDF2F4</color>
+    <color name="red2">#C80018</color>
+    <color name="gold">#FFD700</color>
 
 </resources>

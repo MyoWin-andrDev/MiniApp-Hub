@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import java.util.List;
 
 import it.ezzie.myapplist.calculator.MainActivity_Blue_Calculator;
+import it.ezzie.myapplist.calendar.MainActivity_Calendar;
 import it.ezzie.myapplist.databinding.ActivityMiniAppHubBinding;
 import it.ezzie.myapplist.fontConverter.MainActivityFontConverter;
 import it.ezzie.myapplist.wordGuess.MainActivityWordGuess;
@@ -37,9 +38,10 @@ public class MainActivity extends AppCompatActivity {
 
     private void initAppData(){
         appList = List.of(
-                new AppList(1,"Word Guess","Puzzle", R.drawable.word_guess),
-                new AppList(2,"Font Converter","Font", R.drawable.font_converter),
-                new AppList(3,"Calculator","Math", R.drawable.calculator)
+                new AppList(1,"Word Guess","Puzzles", R.drawable.word_guess),
+                new AppList(2,"Font Converter","Fonts", R.drawable.font_converter),
+                new AppList(3,"Calculator","Maths", R.drawable.calculator),
+                new AppList(4,"Calendar","Events", R.drawable.calendar)
         );
     }
 
@@ -65,6 +67,10 @@ public class MainActivity extends AppCompatActivity {
                 break;
           case "Calculator" :
                 intent = new Intent(MainActivity.this, MainActivity_Blue_Calculator.class);
+                initAppIntent(intent);
+                break;
+            case "Calendar" :
+                intent = new Intent(MainActivity.this, MainActivity_Calendar.class);
                 initAppIntent(intent);
                 break;
         }

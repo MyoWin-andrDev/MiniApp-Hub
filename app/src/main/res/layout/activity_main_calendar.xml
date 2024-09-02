@@ -1,0 +1,659 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black2"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/tvMonth"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="February"
+        android:textSize="30dp"
+        android:fontFamily="@font/roboto_bold"
+        android:textColor="@color/white"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="35dp"/>
+
+    <TextView
+        android:id="@+id/tvYear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="2018"
+        android:fontFamily="@font/roboto_medium"
+        android:textSize="20dp"
+        android:textColor="@color/white2"
+        android:layout_below="@+id/tvMonth"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="45dp">
+
+         <ImageView
+            android:id="@+id/previousMonth"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/baseline_arrow_back_ios_24"
+            android:layout_alignTop="@+id/tvMonth"
+            android:layout_alignBottom="@+id/tvMonth"
+            android:layout_marginEnd="20dp"
+             android:onClick="previousMonth" />
+        <ImageView
+            android:id="@+id/nextMonth"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/baseline_arrow_forward_ios_24"
+            android:layout_alignTop="@+id/tvMonth"
+            android:layout_alignBottom="@+id/tvMonth"
+            android:layout_marginEnd="15dp"
+            android:onClick="nextMonth" />
+
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/weekLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@+id/tvYear"
+        android:layout_marginTop="30dp"
+        android:weightSum="7">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="SUN"
+            android:textSize="16sp"
+            android:layout_weight="1"
+            android:layout_marginStart="14dp"
+            android:textColor="@color/red2"
+            android:fontFamily="@font/roboto_bold"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="MON"
+            android:textSize="16dp"
+            android:layout_weight="1"
+            android:textColor="@color/white2"
+            android:fontFamily="@font/roboto_bold"/>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TUE"
+            android:textSize="16dp"
+            android:layout_weight="1"
+            android:textColor="@color/white"
+            android:fontFamily="@font/roboto_bold"/>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="WED"
+            android:textSize="16dp"
+            android:layout_weight="1"
+            android:textColor="@color/white"
+            android:fontFamily="@font/roboto_bold"/>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="THUR"
+            android:textSize="16dp"
+            android:layout_weight="1"
+            android:textColor="@color/white"
+            android:fontFamily="@font/roboto_bold"/>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="FRI"
+            android:textSize="16dp"
+            android:layout_weight="1"
+            android:textColor="@color/white"
+            android:fontFamily="@font/roboto_bold"/>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="SAT"
+            android:textSize="16dp"
+            android:layout_weight="1"
+            android:textColor="@color/red2"
+            android:fontFamily="@font/roboto_bold"/>
+
+    </LinearLayout>
+    
+    <RelativeLayout
+        android:id="@+id/rLayout"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:layout_below="@+id/weekLayout"
+        android:background="@color/black2"
+        android:layout_marginTop="0dp">
+        
+        <GridLayout
+            android:id="@+id/glDays"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="5dp"
+            android:columnCount="7"
+            android:rowCount="5"
+            android:useDefaultMargins="true">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:onClick="onNumberClicked"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:text="1"
+                android:fontFamily="@font/roboto_black"
+                android:background="@drawable/day_background"
+                android:textSize="16dp"
+                android:textColor="@color/white"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:onClick="onNumberClicked"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:text="1"
+                android:fontFamily="@font/roboto_black"
+                android:background="@drawable/day_background"
+                android:textSize="16dp"
+                android:textColor="@color/white"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:onClick="onNumberClicked"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:text="1"
+                android:fontFamily="@font/roboto_black"
+                android:background="@drawable/day_background"
+                android:textSize="18dp"
+                android:textColor="@color/white"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:onClick="onNumberClicked"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:text="1"
+                android:fontFamily="@font/roboto_black"
+                android:background="@drawable/day_background"
+                android:textSize="16dp"
+                android:textColor="@color/white"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:onClick="onNumberClicked"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:text="1"
+                android:fontFamily="@font/roboto_black"
+                android:background="@drawable/day_background"
+                android:textSize="16dp"
+                android:textColor="@color/white"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:onClick="onNumberClicked"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:text="1"
+                android:fontFamily="@font/roboto_black"
+                android:background="@drawable/day_background"
+                android:textSize="16dp"
+                android:textColor="@color/white"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:onClick="onNumberClicked"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:text="1"
+                android:fontFamily="@font/roboto_black"
+                android:background="@drawable/day_background"
+                android:textSize="16dp"
+                android:textColor="@color/white"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:onClick="onNumberClicked"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:text="1"
+                android:fontFamily="@font/roboto_black"
+                android:background="@drawable/day_background"
+                android:textSize="16dp"
+                android:textColor="@color/white"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:onClick="onNumberClicked"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:text="1"
+                android:fontFamily="@font/roboto_black"
+                android:background="@drawable/day_background"
+                android:textSize="16dp"
+                android:textColor="@color/white"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:onClick="onNumberClicked"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:text="1"
+                android:fontFamily="@font/roboto_black"
+                android:background="@drawable/day_background"
+                android:textSize="18dp"
+                android:textColor="@color/white"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:onClick="onNumberClicked"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:text="1"
+                android:fontFamily="@font/roboto_black"
+                android:background="@drawable/day_background"
+                android:textSize="16dp"
+                android:textColor="@color/white"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:onClick="onNumberClicked"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:text="1"
+                android:fontFamily="@font/roboto_black"
+                android:background="@drawable/day_background"
+                android:textSize="16dp"
+                android:textColor="@color/white"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:onClick="onNumberClicked"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:text="1"
+                android:fontFamily="@font/roboto_black"
+                android:background="@drawable/day_background"
+                android:textSize="16dp"
+                android:textColor="@color/white"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:onClick="onNumberClicked"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:text="1"
+                android:fontFamily="@font/roboto_black"
+                android:background="@drawable/day_background"
+                android:textSize="16dp"
+                android:textColor="@color/white"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"/>
+
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:onClick="onNumberClicked"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:text="1"
+                android:fontFamily="@font/roboto_black"
+                android:background="@drawable/day_background"
+                android:textSize="16dp"
+                android:textColor="@color/white"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:onClick="onNumberClicked"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:text="1"
+                android:fontFamily="@font/roboto_black"
+                android:background="@drawable/day_background"
+                android:textSize="16dp"
+                android:textColor="@color/white"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:onClick="onNumberClicked"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:text="1"
+                android:fontFamily="@font/roboto_black"
+                android:background="@drawable/day_background"
+                android:textSize="18dp"
+                android:textColor="@color/white"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:onClick="onNumberClicked"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:text="1"
+                android:fontFamily="@font/roboto_black"
+                android:background="@drawable/day_background"
+                android:textSize="16dp"
+                android:textColor="@color/white2"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:onClick="onNumberClicked"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:text="1"
+                android:fontFamily="@font/roboto_black"
+                android:background="@drawable/day_background"
+                android:textSize="16dp"
+                android:textColor="@color/white"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:onClick="onNumberClicked"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:text="1"
+                android:fontFamily="@font/roboto_black"
+                android:background="@drawable/day_background"
+                android:textSize="16dp"
+                android:textColor="@color/white"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:onClick="onNumberClicked"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:text="1"
+                android:fontFamily="@font/roboto_black"
+                android:background="@drawable/day_background"
+                android:textSize="16dp"
+                android:textColor="@color/white"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"/>
+
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:onClick="onNumberClicked"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:text="1"
+                android:fontFamily="@font/roboto_black"
+                android:background="@drawable/day_background"
+                android:textSize="16dp"
+                android:textColor="@color/white"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:onClick="onNumberClicked"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:text="1"
+                android:fontFamily="@font/roboto_black"
+                android:background="@drawable/day_background"
+                android:textSize="16dp"
+                android:textColor="@color/white"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:onClick="onNumberClicked"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:text="1"
+                android:fontFamily="@font/roboto_black"
+                android:background="@drawable/day_background"
+                android:textSize="18dp"
+                android:textColor="@color/white"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:onClick="onNumberClicked"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:text="1"
+                android:fontFamily="@font/roboto_black"
+                android:background="@drawable/day_background"
+                android:textSize="16dp"
+                android:textColor="@color/white"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:onClick="onNumberClicked"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:text="1"
+                android:fontFamily="@font/roboto_black"
+                android:background="@drawable/day_background"
+                android:textSize="16dp"
+                android:textColor="@color/white"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:onClick="onNumberClicked"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:text="1"
+                android:fontFamily="@font/roboto_black"
+                android:background="@drawable/day_background"
+                android:textSize="16dp"
+                android:textColor="@color/white"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:onClick="onNumberClicked"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:text="1"
+                android:fontFamily="@font/roboto_black"
+                android:background="@drawable/day_background"
+                android:textSize="16dp"
+                android:textColor="@color/white"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"/>
+
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:onClick="onNumberClicked"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:text="1"
+                android:fontFamily="@font/roboto_black"
+                android:background="@drawable/day_background"
+                android:textSize="16dp"
+                android:textColor="@color/white"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:onClick="onNumberClicked"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:text="1"
+                android:fontFamily="@font/roboto_black"
+                android:background="@drawable/day_background"
+                android:textSize="16dp"
+                android:textColor="@color/white"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:onClick="onNumberClicked"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:text="1"
+                android:fontFamily="@font/roboto_black"
+                android:background="@drawable/day_background"
+                android:textSize="18dp"
+                android:textColor="@color/white"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:onClick="onNumberClicked"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:text="1"
+                android:fontFamily="@font/roboto_black"
+                android:background="@drawable/day_background"
+                android:textSize="16dp"
+                android:textColor="@color/white"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:onClick="onNumberClicked"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:text="1"
+                android:fontFamily="@font/roboto_black"
+                android:background="@drawable/day_background"
+                android:textSize="16dp"
+                android:textColor="@color/white"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:onClick="onNumberClicked"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:text="1"
+                android:fontFamily="@font/roboto_black"
+                android:background="@drawable/day_background"
+                android:textSize="16dp"
+                android:textColor="@color/white"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:onClick="onNumberClicked"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:text="1"
+                android:fontFamily="@font/roboto_black"
+                android:background="@drawable/day_background"
+                android:textSize="16dp"
+                android:textColor="@color/white"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"/>
+
+
+        </GridLayout>
+        
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/redDot"
+        android:layout_width="10dp"
+        android:layout_height="10dp"
+        android:layout_below="@+id/rLayout"
+        android:text="  "
+        android:background="@drawable/mmdate"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:textSize="20dp"/>
+
+    <TextView
+        android:id="@+id/MMYear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rLayout"
+        android:text="Myanmar Year"
+        android:textSize="20dp"
+        android:textColor="@color/white"
+        android:layout_marginLeft="50dp"/>
+
+    <TextView
+        android:id="@+id/redDot2"
+        android:layout_width="10dp"
+        android:layout_height="10dp"
+        android:layout_below="@+id/rLayout"
+        android:text="  "
+        android:background="@drawable/mmdate"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="50dp"
+        android:textSize="20dp"/>
+
+    <TextView
+        android:id="@+id/MMYear2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rLayout"
+        android:text="Myanmar Year"
+        android:textSize="20dp"
+        android:textColor="@color/white"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="40dp"/>
+
+    <TextView
+        android:id="@+id/redDot3"
+        android:layout_width="10dp"
+        android:layout_height="10dp"
+        android:layout_below="@+id/rLayout"
+        android:text="  "
+        android:background="@drawable/mmdate"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="90dp"
+        android:textSize="20dp"/>
+
+    <TextView
+        android:id="@+id/MMYear3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rLayout"
+        android:text="Myanmar Year"
+        android:textSize="20dp"
+        android:textColor="@color/white"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="80dp"/>
+
+        
+
+
+
+
+
+
+</RelativeLayout>
