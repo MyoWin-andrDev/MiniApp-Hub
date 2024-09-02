@@ -56,10 +56,19 @@
             android:name=".musicplayer.MainActivityMusic"
             android:exported="true">
         </activity>
+
+        <activity
+            android:name=".musicplayer.DetailActivityMusic"
+            android:exported="false">
+        </activity>
 <!--        Voucher App-->
         <activity
             android:name=".voucher.MainActivityVoucher"
             android:exported="true">
+        </activity>
+        <activity
+            android:name=".voucher.AddActivity"
+            android:exported="false">
         </activity>
 <!--        Todo List-->
         <activity

@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import it.ezzie.myapplist.databinding.CustomListViewBinding;
+import it.ezzie.myapplist.todolist.Todo;
 
 public class CustomListView extends BaseAdapter {
 
@@ -47,7 +48,7 @@ public class CustomListView extends BaseAdapter {
             AppList currentApp = appList.get(position);
             customListViewBinding.imgView.setImageResource(currentApp.appImg());
             customListViewBinding.txtTitle.setText(currentApp.appTitle());
-            customListViewBinding.txtType.setText(currentApp.appTitle());
+            customListViewBinding.txtType.setText(currentApp.appType());
         }
         return convertView;
     }

@@ -98,6 +98,8 @@ public class MainActivity extends AppCompatActivity {
         initAppIntent(intent);
     }
     private void initAppIntent(Intent intent){
-        startActivity(intent);
+        if(intent != null){
+            startActivity(intent);
+        }
     }
 }

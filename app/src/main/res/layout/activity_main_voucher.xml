@@ -36,7 +36,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:src="@drawable/add_icon"
-        android:layout_margin="30dp"/>
+        android:layout_margin="30dp"
+        android:layout_marginBottom="20dp"/>
     <TextView
         android:id="@+id/totaltxt"
         android:layout_width="wrap_content"
