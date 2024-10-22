@@ -138,4 +138,5 @@ public class ActivityLifeCycle extends AppCompatActivity {
             }
         }
     }
+
 }

@@ -42,7 +42,6 @@ public class CustomListView extends BaseAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
         if(convertView == null){
             LayoutInflater layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-           // convertView = customListViewBinding.getRoot();
             customListViewBinding = CustomListViewBinding.inflate(layoutInflater);
             convertView = customListViewBinding.getRoot();
             AppList currentApp = appList.get(position);
